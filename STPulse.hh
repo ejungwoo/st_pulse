@@ -9,7 +9,6 @@
 class STPulse
 {
   public:
-
     /**
      * Construct STPulse with fileName and step.
      * step is the difference of the time-bucket between data points.

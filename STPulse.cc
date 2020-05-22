@@ -16,14 +16,15 @@ void STPulse::Initialize(TString fileName)
 {
   TString spiritroot = gSystem -> Getenv("VMCWORKDIR");
 
-  fileName = spiritroot + "/parameters/" + fileName;
+  fileName = fileName;
 
   ifstream file(fileName);
   string line;
 
   while (getline(file, line) && line.find("#") == 0) {}
   istringstream ss(line);
-  ss >> fShapingTime >> fNumDataPoints >> fStepSize >> fNumAscending >> fNDFTbs;
+  ss >> fShapingTime;
+  ss >> fNumDataPoints >> fStepSize >> fNumAscending >> fNDFTbs;
 
   if (fNumDataPoints < 20 || fStepSize > 1)
   {
